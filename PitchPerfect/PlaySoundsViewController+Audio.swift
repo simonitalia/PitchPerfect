@@ -152,6 +152,13 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             setPlayButtonsEnabled(true)
             stopButton.isEnabled = false
         }
+        
+        
+        //set content mode for UIButtons programmatically
+        let buttons = [snailButton, rabbitButton, chipmunkButton, vaderButton, echoButton, reverbButton, stopButton]
+        buttons.forEach {
+            $0?.imageView?.contentMode = .scaleAspectFit
+        }
     }
     
     func setPlayButtonsEnabled(_ enabled: Bool) {
